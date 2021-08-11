@@ -1,7 +1,7 @@
 {
   "name": "higher-algebra",
   "version": "0.1.0",
-  "description": "quick-paper原型项目",
+  "description": "高等代数，包括行列式和矩阵、线性方程组、线性空间和线性变换、欧几里得空间、双线性函数与辛空间等代数基础知识。",
   "scripts": {
     "start": "npm install && npm run dev",
     "dev": "webpack-dev-server --config webpack.dev.js",
@@ -12,8 +12,8 @@
     "url": "git+https://github.com/knowpedia/Higher-Algebra.git"
   },
   "keywords": [
-    "quick-paper",
-    "prototype"
+    "higher-algebra",
+    "knowpedia"
   ],
   "author": "你好2007",
   "license": "MIT",
@@ -25,8 +25,7 @@
     "@hai2007/polyfill": "0.1.1",
     "@hai2007/style": "^0.3.0",
     "@hai2007/tool": "^0.6.6",
-    "clunch": "^1.5.2",
-    "quick-paper": "^0.5.1"
+    "knowpedia": "0.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",

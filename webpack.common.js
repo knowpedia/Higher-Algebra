@@ -1,4 +1,4 @@
-const QuickPaperLoaderPlugin = require('quick-paper/loader-plug/index.js');
+const KnowpediaLoaderPlugin = require('knowpedia/loader-plug/index.js');
 const pkg = JSON.parse(require('fs').readFileSync('./package.json'));
 
 module.exports = {
@@ -11,15 +11,11 @@ module.exports = {
     module: {
         rules: [{
             test: /\.paper$/,
-            loader: ['quick-paper/loader/index.js'],
-            exclude: /node_modules/
-        }, {
-            test: /\.clunch$/,
-            loader: ['clunch/loader.js'],
+            loader: ['knowpedia/loader/index.js'],
             exclude: /node_modules/
         }, {
             test: /\.(scss|css)$/,
-            loader: ['quick-paper/style-loader/index.js', 'css-loader', 'postcss-loader','./scss-loader.js']
+            loader: ['knowpedia/style-loader/index.js', 'css-loader', 'postcss-loader', './scss-loader.js']
         }, {
             test: /\.js$/,
             loader: ['babel-loader'],
@@ -37,6 +33,6 @@ module.exports = {
         }]
     },
     plugins: [
-        new QuickPaperLoaderPlugin()
+        new KnowpediaLoaderPlugin()
     ]
 };

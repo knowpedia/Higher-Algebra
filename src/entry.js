@@ -1,4 +1,4 @@
-import QuickPaper from 'quick-paper';
+import Knowpedia from 'knowpedia';
 
 // 兼容文件
 import '@hai2007/polyfill/Promise.js';
@@ -10,7 +10,7 @@ import "./styles/common.css";
 import App from './App.paper';
 
 // 创建对象
-window.quickPaper = new QuickPaper({
+window.knowpedia = new Knowpedia({
 
     // 挂载点
     el: document.getElementById('root'),
