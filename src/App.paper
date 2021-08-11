@@ -1,0 +1,20 @@
+<template>
+    Tips:整理中，敬请期待！
+</template>
+<script>
+
+
+    export default {
+        data() {
+            return {
+
+            };
+        }
+    };
+</script>
+<style>
+    [quickpaper]{
+        padding:30px;
+        color: red;
+    }
+</style>
