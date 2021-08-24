@@ -1,20 +1,138 @@
 <template>
-    Tips:整理中，敬请期待！
+    <div class="menu-view">
+        <div>
+            <a href="https://knowpedia.github.io/entry/" target="_blank" class='knowpedia'></a>
+            <h2>《高等代数》</h2>
+            <ul :active='pagename=="quantic"?"yes":"no"'>
+                <li>
+                    <h3 @click='openPage("quantic","top")'>多项式</h3>
+                    <ul>
+                    </ul>
+                </li>
+            </ul>
+            <ul :active='pagename=="determinant"?"yes":"no"'>
+                <li>
+                    <h3 @click='openPage("determinant","top")'>行列式</h3>
+                    <ul>
+                    </ul>
+                </li>
+            </ul>
+            <ul :active='pagename=="linear-system-of-equations"?"yes":"no"'>
+                <li>
+                    <h3 @click='openPage("linear-system-of-equations","top")'>线性方程组</h3>
+                    <ul>
+                    </ul>
+                </li>
+            </ul>
+            <ul :active='pagename=="matrix"?"yes":"no"'>
+                <li>
+                    <h3 @click='openPage("matrix","top")'>矩阵</h3>
+                    <ul>
+                    </ul>
+                </li>
+            </ul>
+            <a href="https://github.com/knowpedia/Higher-Algebra" target="_blank">Fork Me On Github</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class='doc-view' id='root-view'>
+            <component :is='page'></component>
+        </div>
+    </div>
 </template>
 <script>
+    import fixedScroll from './Service/fixedScroll.js';
 
+    let pages = {
+        quantic: () => import('./quantic.paper'),
+        determinant: () => import('./determinant.paper'),
+        "linear-system-of-equations": () => import('./linear-system-of-equations.paper'),
+        matrix: () => import('./matrix.paper')
+    };
 
     export default {
         data() {
             return {
-
+                page: null,
+                pagename: ""
             };
+        },
+        mounted() {
+            let routerString = (window.location.href + "").split('#/')[1];
+            let pagename = 'quantic', fixedName = 'top';
+            if (routerString) {
+                let temp = routerString.split('/');
+                if (temp[0] in pages) pagename = temp[0];
+                fixedName = temp[1] || "top";
+            }
+            this.openPage(pagename, fixedName);
+        },
+        methods: {
+            openPage(pagename, fixedName) {
+                pages[pagename]().then(data => {
+                    this.page = data.default;
+                    this.pagename = pagename;
+                    window.location.href = "#/" + pagename + "/" + fixedName;
+                    fixedScroll();
+                });
+            },
+            doScroll(fixedName) {
+                window.location.href = "#/" + this.pagename + "/" + fixedName;
+                fixedScroll();
+            }
         }
     };
+
 </script>
 <style>
-    [quickpaper]{
-        padding:30px;
-        color: red;
+    [quickpaper] {
+        white-space: nowrap;
+
+        &>div {
+            display: inline-block;
+            vertical-align: top;
+            white-space: normal;
+            height: 100vh;
+
+            &.menu-view {
+                width: 300px;
+                position: fixed;
+                left: 0;
+                top: 0;
+
+                &>div {
+                    [active='no']>li>ul {
+                        display: none;
+                    }
+
+                    &>a {
+                        background-color: #529bcf;
+                        color: white;
+                        text-align: center;
+                        margin-top: .3rem;
+                        cursor: pointer;
+                        font-size: .15rem;
+                        display: block;
+                        width: 2.6rem;
+                        padding: .1rem 0;
+
+                        &.knowpedia {
+                            background-image: url('./assets/logo.png');
+                            height: 150px;
+                            background-color: transparent;
+                            background-size: auto 100%;
+                            background-position: center;
+                            margin-top: 0;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                }
+            }
+
+            &.content {
+                margin-left: 300px;
+                width: calc(100vw - 300px);
+            }
+        }
     }
 </style>

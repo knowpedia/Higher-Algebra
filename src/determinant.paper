@@ -1,0 +1,5 @@
+<template>
+    <div class='doc-view' id='root-view'>
+        <header id="fixed-top" @click='doScroll("top")'>行列式</header>
+    </div>
+</template>
