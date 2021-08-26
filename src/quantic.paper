@@ -3,3 +3,15 @@
         <header id="fixed-top" @click='doScroll("top")'>多项式</header>
     </div>
 </template>
+<script>
+    export default {
+        data() {
+            mathFormulas: { }
+        },
+        mounted() {
+            this.mathFormulas = {
+
+            };
+        },
+    };
+</script>

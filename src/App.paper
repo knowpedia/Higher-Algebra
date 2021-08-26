@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="content">
-        <div class='doc-view' id='root-view'>
+        <div id='root-view'>
             <component :is='page'></component>
         </div>
     </div>

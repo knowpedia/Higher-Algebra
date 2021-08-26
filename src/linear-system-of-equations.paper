@@ -3,3 +3,15 @@
         <header id="fixed-top" @click='doScroll("top")'>线性方程组</header>
     </div>
 </template>
+<script>
+    export default {
+        data() {
+            mathFormulas: { }
+        },
+        mounted() {
+            this.mathFormulas = {
+
+            };
+        },
+    };
+</script>
