@@ -1,16 +1,106 @@
 <template>
     <div class='doc-view' id='root-view'>
-        <header id="fixed-top" @click='doScroll("top")'>多项式</header>
+        <header id="fixed-top">多项式</header>
+        <h1 id='fixed-sy'>
+            数域
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            设P是由一些复数组成的集合，其中包括0和1。如果P中任意两个数（这两个数也可以相同）的和、差、积、商（除数不为零）仍然是F中的数，那么，P就称为一个
+            <span class="important">
+                数域
+            </span>
+            。
+        </p>
+        <h1 id='fixed-yydxs'>
+            一元多项式
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            设n是一非负整数。表达式
+            <span kp-math-formula="mathFormulas.yydxs"></span>，其中
+            <span kp-math-formula="mathFormulas.a0"></span>，
+            <span kp-math-formula="mathFormulas.a1"></span>，
+            <span kp-math-formula="mathFormulas.an"></span>
+            全属于数域P，称为
+            <span class="important">系数在数域P中的一元多项式</span>
+            ，或者简称为
+            <span class="important">数域P上的一元多项式</span>
+            。
+        </p>
+        <p>
+            在上面的多项式中，
+            <span kp-math-formula='mathFormulas.axi'></span>
+            称为i
+            <span class="important">次项</span>
+            ，
+            <span kp-math-formula='mathFormulas.ai'></span>
+            称为i次项的
+            <span class="important">系数</span>
+            。同时，用f(x)，g(x)，...来表示多项式。
+        </p>
+        <h2>
+            定义
+        </h2>
+        <p>
+            如果在多项式f(x)与g(x)中，除去系数为零的项外，同次项的系数全相等，那么f(x)与g(x)就称为
+            <span class="important">相等</span>，记为：f(x)=g(x)。系数全为零的多项式称为
+            <span class="important">零多项式</span>
+            ，记为0。
+        </p>
+        <p>
+            上面定义的多项式，如果
+            <span kp-math-formula="mathFormulas.an"></span>
+            ≠0，那么
+            <span kp-math-formula='mathFormulas.axn'></span>
+            称为多项式的
+            <span class="important">首项</span>，
+            <span kp-math-formula="mathFormulas.an"></span>
+            称为
+            <span class="important">首项系数</span>
+            ，n称为多项式的
+            <span class="important">次数</span>
+            。零次多项式是唯一不定义次数的多项式。多项式f(x)的次数记为deg(f(x))。
+        </p>
+        <h2>
+            定义
+        </h2>
+        <p>
+            所有系数在数域P中的一元多项式的全体，称为数域P上的
+            <span class="important">一元多项式环</span>
+            ，记为P[x]，P称为P[x]的系数域。
+        </p>
     </div>
 </template>
 <script>
     export default {
         data() {
-            mathFormulas: { }
+            return {
+                mathFormulas: {}
+            };
         },
         mounted() {
             this.mathFormulas = {
-
+                yydxs: this.$mathFormula.join(
+                    this.$mathFormula.rightBottom("a", 'n'), this.$mathFormula.rightTop('x', 'n'),
+                    "+",
+                    this.$mathFormula.rightBottom("a", 'n-1'), this.$mathFormula.rightTop('x', 'n-1'),
+                    "+", "···", "+",
+                    this.$mathFormula.rightBottom("a", '0')),
+                a0: this.$mathFormula.rightBottom('a', 0),
+                a1: this.$mathFormula.rightBottom('a', 1),
+                ai: this.$mathFormula.rightBottom('a', 'i'),
+                an: this.$mathFormula.rightBottom('a', 'n'),
+                axi: this.$mathFormula.join(
+                    this.$mathFormula.rightBottom("a", 'i'), this.$mathFormula.rightTop('x', 'i')
+                ),
+                axn: this.$mathFormula.join(
+                    this.$mathFormula.rightBottom("a", 'n'), this.$mathFormula.rightTop('x', 'n')
+                )
             };
         },
     };

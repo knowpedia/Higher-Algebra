@@ -1,6 +1,7 @@
 .doc-view {
     width: 7rem;
     margin: auto;
+    padding-bottom: 20px;
 }
 
 .doc-view>header {

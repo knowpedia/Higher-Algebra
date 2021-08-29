@@ -7,30 +7,40 @@
                 <li>
                     <h3 @click='openPage("quantic","top")'>多项式</h3>
                     <ul>
+                        <li>
+                            <h4 @click='doScroll("sy")'>
+                                数域
+                            </h4>
+                        </li>
+                        <li>
+                            <h4 @click='doScroll("yydxs")'>
+                                一元多项式
+                            </h4>
+                        </li>
                     </ul>
                 </li>
             </ul>
-            <ul :active='pagename=="determinant"?"yes":"no"'>
+            <!-- <ul :active='pagename=="determinant"?"yes":"no"'>
                 <li>
                     <h3 @click='openPage("determinant","top")'>行列式</h3>
                     <ul>
                     </ul>
                 </li>
-            </ul>
-            <ul :active='pagename=="linear-system-of-equations"?"yes":"no"'>
+            </ul> -->
+            <!-- <ul :active='pagename=="linear-system-of-equations"?"yes":"no"'>
                 <li>
                     <h3 @click='openPage("linear-system-of-equations","top")'>线性方程组</h3>
                     <ul>
                     </ul>
                 </li>
-            </ul>
-            <ul :active='pagename=="matrix"?"yes":"no"'>
+            </ul> -->
+            <!-- <ul :active='pagename=="matrix"?"yes":"no"'>
                 <li>
                     <h3 @click='openPage("matrix","top")'>矩阵</h3>
                     <ul>
                     </ul>
                 </li>
-            </ul>
+            </ul> -->
             <a href="https://github.com/knowpedia/Higher-Algebra" target="_blank">Fork Me On Github</a>
         </div>
     </div>
@@ -99,10 +109,21 @@
                 position: fixed;
                 left: 0;
                 top: 0;
+                background-color: white;
 
                 &>div {
-                    [active='no']>li>ul {
-                        display: none;
+                    [active='no']>li {
+                        &>ul {
+                            display: none;
+                        }
+
+                    }
+
+                    [active='yes']>li {
+                        &>h3 {
+                            font-weight: 800;
+
+                        }
                     }
 
                     &>a {
