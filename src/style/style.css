@@ -5,3 +5,10 @@ html {
 body {
     font-size: .16rem;
 }
+
+/* 补充样式 */
+.center-line{
+    text-align: center;
+    margin: 10px 0;
+    display: block;
+}

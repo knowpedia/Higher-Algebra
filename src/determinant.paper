@@ -1,6 +1,31 @@
 <template>
     <div class='doc-view' id='root-view'>
         <header id="fixed-top" @click='doScroll("top")'>行列式</header>
+        <h1 id='fixed-pl'>
+            排列
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            由1，2，...，n组成的一个有序数组称为一个<span class="important">n级排列</span>。
+        </p>
+        <h2>
+            定义
+        </h2>
+        <p>
+            在一个排列中，如果一对数的前后位置与大小顺序相反，即前面的数大于后面的数，那么它们就称为一个
+            <span class="important">逆序</span>，一个排列中逆序的总数就称为这个排列的
+            <span class="important">逆序数</span>。
+        </p>
+        <h2>
+            定义
+        </h2>
+        <p>
+            逆序数为偶数的排列称为
+            <span class="important">偶排列</span>；逆序数为奇数的排列称为
+            <span class="important">奇排列</span>。
+        </p>
     </div>
 </template>
 <script>

@@ -33,8 +33,8 @@
     border-bottom: 1px solid gray;
     padding: .1rem 0;
     margin-top: .3rem;
-    color: rgb(83, 81, 81);
-    font-weight: 400;
+    font-weight: 800;
+    color: red;
 }
 
 .doc-view>h3 {
@@ -117,7 +117,6 @@
 }
 
 .doc-view>ul li {
-    list-style-type: disc;
     line-height: 2em;
     font-size: .13rem;
     color: #000000;

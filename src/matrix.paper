@@ -1,6 +1,60 @@
 <template>
     <div class='doc-view' id='root-view'>
         <header id="fixed-top" @click='doScroll("top")'>矩阵</header>
+        <h1 id='fixed-jzdys'>
+            矩阵的运算
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            设
+            <span class="center-line">
+                <span kp-math-formula="mathFormulas.A_define"></span>
+                和
+                <span kp-math-formula="mathFormulas.B_define"></span>
+            </span>
+            是两个s x n矩阵，则矩阵
+            <span class="center-line" kp-math-formula="mathFormulas.C_add_define"></span>
+            称为
+            <span class="important">A和B的和</span>
+            ，记为
+            <span class="center-line">
+                C = A + B
+            </span>
+        </p>
+        <p>
+            根据矩阵加法的定义应用关于向量组的秩的性质，可用得出：
+            <span class="center-line">
+                秩(A + B) ≤ 秩(A) + 秩(B)
+            </span>
+        </p>
+        <h2>
+            定义
+        </h2>
+        <p>
+            设
+            <span class="center-line">
+                <span kp-math-formula="mathFormulas.A_define_small"></span>
+                ，
+                <span kp-math-formula="mathFormulas.B_define_small"></span>
+            </span>
+            那么矩阵
+            <span class="center-line" kp-math-formula="mathFormulas.B_define_small"></span>
+            ，其中
+            <span class="center-line" kp-math-formula="mathFormulas.cij_all"></span>
+            称为
+            <span class="important">
+                A与B的乘积
+            </span>
+            ，记为
+            <span class="center-line">
+                C = AB
+            </span>
+        </p>
+        <p>
+            在上面的乘积定义中，我们要求第二个矩阵的行数与第一个矩阵的列数相等。
+        </p>
     </div>
 </template>
 <script>
@@ -12,8 +66,32 @@
         },
         mounted() {
             this.mathFormulas = {
-
+                A_define: this.$mathFormula.join("A=", this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("a", "ij"), 'small'), 'sn'), "=", this.getMatrix('a', 's', "n")),
+                B_define: this.$mathFormula.join("B=", this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("b", "ij"), 'small'), 'sn'), "=", this.getMatrix('b', 's', "n")),
+                C_add_define: this.$mathFormula.join("C=", this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("c", "ij"), 'small'), 'sn'), "=", this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.join(this.$mathFormula.rightBottom('a', 'ij'), "+", this.$mathFormula.rightBottom("b", 'ij')), 'small'), "sn"), this.gAddMatrix('a', 'b', 's', 'n')),
+                A_define_small: this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("a", "ik"), 'small'), 'sn'),
+                B_define_small: this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("b", "kj"), 'small'), 'nm'),
+                C_define_small: this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("c", "ij"), 'small'), 'sm'),
+                cij_all: this.$mathFormula.join(this.$mathFormula.rightBottom('c', 'ij'), "=", this.$mathFormula.rightBottom('a', 'i1'), this.$mathFormula.rightBottom('b', '1j'), "+", this.$mathFormula.rightBottom('a', 'i2'), this.$mathFormula.rightBottom('b', '2j'), "+ ... +", this.$mathFormula.rightBottom('a', 'in'), this.$mathFormula.rightBottom('b', 'nj'), "=", this.$mathFormula.sum("k=1", "n", this.$mathFormula.join(this.$mathFormula.rightBottom('a', 'ik'), this.$mathFormula.rightBottom('b', 'kj'))))
             };
         },
+        methods: {
+            getMatrix(name, x, y) {
+                return this.$mathFormula.matrix([
+                    [this.$mathFormula.rightBottom(name, 11), this.$mathFormula.rightBottom(name, 12), '...', this.$mathFormula.rightBottom(name, "1" + y)],
+                    [this.$mathFormula.rightBottom(name, 21), this.$mathFormula.rightBottom(name, 22), '...', this.$mathFormula.rightBottom(name, "2" + y)],
+                    ["...", "...", "", "..."],
+                    [this.$mathFormula.rightBottom(name, x + "1"), this.$mathFormula.rightBottom(name, x + "2"), '...', this.$mathFormula.rightBottom(name, x + y)]
+                ]);
+            },
+            gAddMatrix(name1, name2, x, y) {
+                return this.$mathFormula.matrix([
+                    [this.$mathFormula.join(this.$mathFormula.rightBottom(name1, 11), "+", this.$mathFormula.rightBottom(name2, 11)), this.$mathFormula.join(this.$mathFormula.rightBottom(name1, 12), "+", this.$mathFormula.rightBottom(name2, 12)), '...', this.$mathFormula.join(this.$mathFormula.rightBottom(name1, "1" + y), "+", this.$mathFormula.rightBottom(name2, "1" + y))],
+                    [this.$mathFormula.join(this.$mathFormula.rightBottom(name1, 21), "+", this.$mathFormula.rightBottom(name2, 21)), this.$mathFormula.join(this.$mathFormula.rightBottom(name1, 22), "+", this.$mathFormula.rightBottom(name2, 22)), '...', this.$mathFormula.join(this.$mathFormula.rightBottom(name1, "2" + y), "+", this.$mathFormula.rightBottom(name2, "2" + y))],
+                    ["...", "...", "", "..."],
+                    [this.$mathFormula.join(this.$mathFormula.rightBottom(name1, x + "1"), "+", this.$mathFormula.rightBottom(name2, x + "1")), this.$mathFormula.join(this.$mathFormula.rightBottom(name1, x + "2"), "+", this.$mathFormula.rightBottom(name2, x + "2")), '...', this.$mathFormula.join(this.$mathFormula.rightBottom(name1, x + y), "+", this.$mathFormula.rightBottom(name2, x + y))]
+                ]);
+            }
+        }
     };
 </script>

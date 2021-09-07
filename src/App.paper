@@ -17,30 +17,55 @@
                                 一元多项式
                             </h4>
                         </li>
+                        <li>
+                            <h4 @click='doScroll("zcdgl")'>
+                                整除的概念
+                            </h4>
+                        </li>
+                        <li>
+                            <h4 @click='doScroll("zdgys")'>
+                                最大公因式
+                            </h4>
+                        </li>
                     </ul>
                 </li>
             </ul>
-            <!-- <ul :active='pagename=="determinant"?"yes":"no"'>
+            <ul :active='pagename=="determinant"?"yes":"no"'>
                 <li>
                     <h3 @click='openPage("determinant","top")'>行列式</h3>
                     <ul>
+                        <li>
+                            <h4 @click='doScroll("pl")'>
+                                排列
+                            </h4>
+                        </li>
                     </ul>
                 </li>
-            </ul> -->
-            <!-- <ul :active='pagename=="linear-system-of-equations"?"yes":"no"'>
+            </ul>
+            <ul :active='pagename=="linear-system-of-equations"?"yes":"no"'>
                 <li>
                     <h3 @click='openPage("linear-system-of-equations","top")'>线性方程组</h3>
                     <ul>
+                        <li>
+                            <h4 @click='doScroll("xyf")'>
+                                消元法
+                            </h4>
+                        </li>
                     </ul>
                 </li>
-            </ul> -->
-            <!-- <ul :active='pagename=="matrix"?"yes":"no"'>
+            </ul>
+            <ul :active='pagename=="matrix"?"yes":"no"'>
                 <li>
                     <h3 @click='openPage("matrix","top")'>矩阵</h3>
                     <ul>
+                        <li>
+                            <h4 @click='doScroll("jzdys")'>
+                                矩阵的运算
+                            </h4>
+                        </li>
                     </ul>
                 </li>
-            </ul> -->
+            </ul>
             <a href="https://github.com/knowpedia/Higher-Algebra" target="_blank">Fork Me On Github</a>
         </div>
     </div>

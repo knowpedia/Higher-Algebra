@@ -1,6 +1,22 @@
 <template>
     <div class='doc-view' id='root-view'>
         <header id="fixed-top" @click='doScroll("top")'>线性方程组</header>
+        <h1 id='fixed-xyf'>
+            消元法
+        </h1>
+        <p>
+            一般线性方程组是指形式为
+            <span class='center-line' kp-math-formula="mathFormulas.xxfcz"></span>
+            的方程组，其中
+            <span kp-math-formula="mathFormulas.x1"></span>，
+            <span kp-math-formula="mathFormulas.x2"></span>，...，
+            <span kp-math-formula="mathFormulas.xn"></span>
+            代表n个未知量，s是方程的个数，
+            <span kp-math-formula="mathFormulas.aij"></span>
+            (i=1，2，...，s 且j=1，2，...，s)称为方程组的系数，
+            <span kp-math-formula="mathFormulas.bj"></span>
+            (j=1，2，...，s)称为常数项。
+        </p>
     </div>
 </template>
 <script>
@@ -12,7 +28,50 @@
         },
         mounted() {
             this.mathFormulas = {
-
+                xxfcz: this.$mathFormula.equationSet(
+                    this.$mathFormula.join(
+                        this.$mathFormula.rightBottom('a', '11'),
+                        this.$mathFormula.rightBottom('x', '1'),
+                        "+",
+                        this.$mathFormula.rightBottom('a', '12'),
+                        this.$mathFormula.rightBottom('x', '2'),
+                        "+...+",
+                        this.$mathFormula.rightBottom('a', '1n'),
+                        this.$mathFormula.rightBottom('x', 'n'),
+                        "=",
+                        this.$mathFormula.rightBottom('b', '1')
+                    ),
+                    this.$mathFormula.join(
+                        this.$mathFormula.rightBottom('a', '21'),
+                        this.$mathFormula.rightBottom('x', '1'),
+                        "+",
+                        this.$mathFormula.rightBottom('a', '22'),
+                        this.$mathFormula.rightBottom('x', '2'),
+                        "+...+",
+                        this.$mathFormula.rightBottom('a', '2n'),
+                        this.$mathFormula.rightBottom('x', 'n'),
+                        "=",
+                        this.$mathFormula.rightBottom('b', '2')
+                    ),
+                    "......",
+                    this.$mathFormula.join(
+                        this.$mathFormula.rightBottom('a', 's1'),
+                        this.$mathFormula.rightBottom('x', '1'),
+                        "+",
+                        this.$mathFormula.rightBottom('a', 's2'),
+                        this.$mathFormula.rightBottom('x', '2'),
+                        "+...+",
+                        this.$mathFormula.rightBottom('a', 'sn'),
+                        this.$mathFormula.rightBottom('x', 'n'),
+                        "=",
+                        this.$mathFormula.rightBottom('b', 's')
+                    )
+                ),
+                x1: this.$mathFormula.rightBottom('x', 1),
+                x2: this.$mathFormula.rightBottom('x', 2),
+                xn: this.$mathFormula.rightBottom('x', 'n'),
+                aij: this.$mathFormula.rightBottom('a', 'ij'),
+                bj: this.$mathFormula.rightBottom('b', 'j')
             };
         },
     };
