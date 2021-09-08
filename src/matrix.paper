@@ -68,7 +68,7 @@
             this.mathFormulas = {
                 A_define: this.$mathFormula.join("A=", this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("a", "ij"), 'small'), 'sn'), "=", this.getMatrix('a', 's', "n")),
                 B_define: this.$mathFormula.join("B=", this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("b", "ij"), 'small'), 'sn'), "=", this.getMatrix('b', 's', "n")),
-                C_add_define: this.$mathFormula.join("C=", this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("c", "ij"), 'small'), 'sn'), "=", this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.join(this.$mathFormula.rightBottom('a', 'ij'), "+", this.$mathFormula.rightBottom("b", 'ij')), 'small'), "sn"), this.gAddMatrix('a', 'b', 's', 'n')),
+                C_add_define: this.$mathFormula.join("C=", this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("c", "ij"), 'small'), 'sn'), "=", this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.join(this.$mathFormula.rightBottom('a', 'ij'), "+", this.$mathFormula.rightBottom("b", 'ij')), 'small'), "sn"), '=', this.gAddMatrix('a', 'b', 's', 'n')),
                 A_define_small: this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("a", "ik"), 'small'), 'sn'),
                 B_define_small: this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("b", "kj"), 'small'), 'nm'),
                 C_define_small: this.$mathFormula.rightBottom(this.$mathFormula.bracket(this.$mathFormula.rightBottom("c", "ij"), 'small'), 'sm'),
