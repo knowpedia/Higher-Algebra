@@ -22,23 +22,23 @@
         </h2>
         <p>
             设n是一非负整数。表达式
-        <div class='center-line' kp-math-formula="mathFormulas.yydxs"></div>，其中
-        <span kp-math-formula="mathFormulas.a0"></span>，
-        <span kp-math-formula="mathFormulas.a1"></span>，
-        <span kp-math-formula="mathFormulas.an"></span>
-        全属于数域P，称为
-        <span class="important">系数在数域P中的一元多项式</span>
-        ，或者简称为
-        <span class="important">数域P上的一元多项式</span>
-        。
+            <span class='center-line' kp-math-formula="mathFormulas[0]"></span>，其中
+            <span kp-math-formula="mathFormulas[1]"></span>，
+            <span kp-math-formula="mathFormulas[2]"></span>，
+            <span kp-math-formula="mathFormulas[4]"></span>
+            全属于数域P，称为
+            <span class="important">系数在数域P中的一元多项式</span>
+            ，或者简称为
+            <span class="important">数域P上的一元多项式</span>
+            。
         </p>
         <p>
             在上面的多项式中，
-            <span kp-math-formula='mathFormulas.axi'></span>
+            <span kp-math-formula='mathFormulas[5]'></span>
             称为i
             <span class="important">次项</span>
             ，
-            <span kp-math-formula='mathFormulas.ai'></span>
+            <span kp-math-formula='mathFormulas[3]'></span>
             称为i次项的
             <span class="important">系数</span>
             。同时，用f(x)，g(x)，...来表示多项式。
@@ -54,12 +54,12 @@
         </p>
         <p>
             上面定义的多项式，如果
-            <span kp-math-formula="mathFormulas.an"></span>
+            <span kp-math-formula="mathFormulas[4]"></span>
             ≠0，那么
-            <span kp-math-formula='mathFormulas.axn'></span>
+            <span kp-math-formula='mathFormulas[6]'></span>
             称为多项式的
             <span class="important">首项</span>，
-            <span kp-math-formula="mathFormulas.an"></span>
+            <span kp-math-formula="mathFormulas[4]"></span>
             称为
             <span class="important">首项系数</span>
             ，n称为多项式的
@@ -147,24 +147,20 @@
             };
         },
         mounted() {
-            this.mathFormulas = {
-                yydxs: this.$mathFormula.join(
+            this.mathFormulas = [
+                this.$mathFormula.join(
                     this.$mathFormula.rightBottom("a", 'n'), this.$mathFormula.rightTop('x', 'n'),
                     "+",
                     this.$mathFormula.rightBottom("a", 'n-1'), this.$mathFormula.rightTop('x', 'n-1'),
                     "+", "···", "+",
                     this.$mathFormula.rightBottom("a", '0')),
-                a0: this.$mathFormula.rightBottom('a', 0),
-                a1: this.$mathFormula.rightBottom('a', 1),
-                ai: this.$mathFormula.rightBottom('a', 'i'),
-                an: this.$mathFormula.rightBottom('a', 'n'),
-                axi: this.$mathFormula.join(
-                    this.$mathFormula.rightBottom("a", 'i'), this.$mathFormula.rightTop('x', 'i')
-                ),
-                axn: this.$mathFormula.join(
-                    this.$mathFormula.rightBottom("a", 'n'), this.$mathFormula.rightTop('x', 'n')
-                )
-            };
+                this.$mathFormula.rightBottom('a', 0),
+                this.$mathFormula.rightBottom('a', 1),
+                this.$mathFormula.rightBottom('a', 'i'),
+                this.$mathFormula.rightBottom('a', 'n'),
+                this.$mathFormula.join(this.$mathFormula.rightBottom("a", 'i'), this.$mathFormula.rightTop('x', 'i')),
+                this.$mathFormula.join(this.$mathFormula.rightBottom("a", 'n'), this.$mathFormula.rightTop('x', 'n'))
+            ];
         },
     };
 </script>

@@ -26,6 +26,80 @@
             <span class="important">偶排列</span>；逆序数为奇数的排列称为
             <span class="important">奇排列</span>。
         </p>
+        <h1 id='fixed-njhls'>
+            n级行列式
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            n级行列式
+            <span class='center-line' kp-math-formula="mathFormulas[0]"></span>
+            等于所有取自不同行不同列的n个元素的乘积
+            <span class='center-line' kp-math-formula="mathFormulas[1]"></span>
+            的代数和，这里的
+            <span kp-math-formula="mathFormulas[2]"></span>
+            是1,2,...,n的一个排列，每项都按照下列规则带有符号：当
+            <span kp-math-formula="mathFormulas[2]"></span>
+            是偶排列时，带有正号，当
+            <span kp-math-formula="mathFormulas[2]"></span>
+            是奇排列时，带有负号。
+        </p>
+        <p>
+            上面的定义还可以写成
+            <span class='center-line' kp-math-formula="mathFormulas[3]"></span>
+        </p>
+        <h1 id='fixed-hlsdjs'>
+            行列式的计算
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            由sn个数排成的s行（横的）n列（纵的）的表
+            <span class='center-line' kp-math-formula="mathFormulas[4]"></span>
+            称为一个s*n的<span class="important">矩阵</span>。
+        </p>
+        <h2>
+            定义
+        </h2>
+        <p>
+            所谓数域P上矩阵的<span class="important">初等行变换</span>（或<span class="important">初等列变换</span>）是指下列三种变换：
+        </p>
+        <ul>
+            <li>1）以P中一个非零的数乘矩阵的某一行（或列）；</li>
+            <li>2）把矩阵的莫一个行（或列）的c倍加到另一行（或列），这里的c是P中任意一个数；</li>
+            <li>3）互换矩阵中的两行（或列）的位置。</li>
+        </ul>
+        <h1 id='fixed-hlsayzk'>
+            行列式按一行（列）展开
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            在行列式
+            <span class='center-line' kp-math-formula="mathFormulas[5]"></span>
+            中划去元素 <span kp-math-formula="mathFormulas[6]"></span>所在的第i行与第j列，剩下的
+            （n-1）<sup>2</sup>个元素按照原来的排法构成一个n-1级的行列式
+            <span class='center-line' kp-math-formula="mathFormulas[7]"></span>
+            称为元素<span kp-math-formula="mathFormulas[6]"></span>的
+            <span class="important">余子式</span>，记为M<sub>ij</sub>。
+        </p>
+        <h2>
+            定义
+        </h2>
+        <p>
+            那么，取
+            <span class="center-line">
+                A<sub>ij</sub> = (-1)<sup>i+j</sup>M<sub>ij</sub>
+            </span>
+            ，其中A<sub>ij</sub>就称为元素a<sub>ij</sub>的<span class="important">代数余子式</span>。
+        </p>
+        <p>
+            对于n级别的行列式，我们就可以按照行（列也是类似的）展开
+            <span class='center-line' kp-math-formula="mathFormulas[8]"></span>
+        </p>
     </div>
 </template>
 <script>
@@ -36,9 +110,35 @@
             };
         },
         mounted() {
-            this.mathFormulas = {
 
-            };
+            let j1j2jn = this.$mathFormula.join(this.$mathFormula.rightBottom('j', 1), this.$mathFormula.rightBottom('j', 2), '...', this.$mathFormula.rightBottom('j', 'n'));
+            let a1j1a2j2anjn = this.$mathFormula.join(this.$mathFormula.rightBottom('a', this.$mathFormula.join('1', this.$mathFormula.rightBottom('j', 1))), this.$mathFormula.rightBottom('a', this.$mathFormula.join('2', this.$mathFormula.rightBottom('j', 2))), '...', this.$mathFormula.rightBottom('a', this.$mathFormula.join('n', this.$mathFormula.rightBottom('j', 'n'))));
+            let hls = this.$mathFormula.matrix([
+                [this.$mathFormula.rightBottom('a', '11'), '...', this.$mathFormula.rightBottom('a', '1j'), '...', this.$mathFormula.rightBottom('a', '1n')],
+                ['...', '', '...', '', '...'],
+                [this.$mathFormula.rightBottom('a', 'i1'), '...', this.$mathFormula.rightBottom('a', 'ij'), '...', this.$mathFormula.rightBottom('a', 'in')],
+                ['...', '', '...', '', '...'],
+                [this.$mathFormula.rightBottom('a', 'n1'), '...', this.$mathFormula.rightBottom('a', 'nj'), '...', this.$mathFormula.rightBottom('a', 'nn')],
+            ], true);
+
+            this.mathFormulas = [
+                this.getMatrix('a', 'n', 'n', true),
+                a1j1a2j2anjn,
+                j1j2jn,
+                this.$mathFormula.join(this.getMatrix('a', 'n', 'n', true), '=', this.$mathFormula.sum(j1j2jn, '', this.$mathFormula.join(this.$mathFormula.bracket(this.$mathFormula.rightTop("(-1)", this.$mathFormula.join('τ', this.$mathFormula.bracket(j1j2jn, 'small'))), 'small'), a1j1a2j2anjn))),
+                this.getMatrix('a', 's', 'n'),
+                hls,
+                this.$mathFormula.rightBottom('a', 'ij'),
+                this.$mathFormula.matrix([
+                    [this.$mathFormula.rightBottom('a', '11'), '...', this.$mathFormula.rightBottom('a', '1,j-1'), this.$mathFormula.rightBottom('a', '1,j+1'), '...', this.$mathFormula.rightBottom('a', '1n')],
+                    ['...', '', '...', '...', '', '...'],
+                    [this.$mathFormula.rightBottom('a', 'i-1,1'), '...', this.$mathFormula.rightBottom('a', 'i-1,j-1,'), this.$mathFormula.rightBottom('a', 'i-1,j+1'), '...', this.$mathFormula.rightBottom('a', 'i-1,n')],
+                    [this.$mathFormula.rightBottom('a', 'i+1,1'), '...', this.$mathFormula.rightBottom('a', 'i+1,j-1'), this.$mathFormula.rightBottom('a', 'i+1,j+1'), '...', this.$mathFormula.rightBottom('a', 'i+1,n')],
+                    ['...', '', '...', '...', '', '...'],
+                    [this.$mathFormula.rightBottom('a', 'n1'), '...', this.$mathFormula.rightBottom('a', 'n,j-1'), this.$mathFormula.rightBottom('a', 'n,j+1'), '...', this.$mathFormula.rightBottom('a', 'nn')],
+                ], true),
+                this.$mathFormula.join(hls, '=', this.$mathFormula.rightBottom('a', 'i1'), this.$mathFormula.rightBottom('A', 'i1'), '+', this.$mathFormula.rightBottom('a', 'i2'), this.$mathFormula.rightBottom('A', 'i2'), '+ ... +', this.$mathFormula.rightBottom('a', 'in'), this.$mathFormula.rightBottom('A', 'in'), '  （其中i=1,2,...,n）')
+            ];
         },
     };
 </script>

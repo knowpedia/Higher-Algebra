@@ -39,6 +39,21 @@
                                 排列
                             </h4>
                         </li>
+                        <li>
+                            <h4 @click='doScroll("njhls")'>
+                                n级行列式
+                            </h4>
+                        </li>
+                        <li>
+                            <h4 @click='doScroll("hlsdjs")'>
+                                行列式的计算
+                            </h4>
+                        </li>
+                        <li>
+                            <h4 @click='doScroll("hlsayzk")'>
+                                行列式按一行（列）展开
+                            </h4>
+                        </li>
                     </ul>
                 </li>
             </ul>

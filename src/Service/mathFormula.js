@@ -2,13 +2,13 @@ export default {
     install(Knowpedia) {
 
         // 矩阵Axy
-        Knowpedia.prototype.getMatrix = function (name, x, y) {
+        Knowpedia.prototype.getMatrix = function (name, x, y,flag) {
             return this.$mathFormula.matrix([
                 [this.$mathFormula.rightBottom(name, 11), this.$mathFormula.rightBottom(name, 12), '...', this.$mathFormula.rightBottom(name, "1" + y)],
                 [this.$mathFormula.rightBottom(name, 21), this.$mathFormula.rightBottom(name, 22), '...', this.$mathFormula.rightBottom(name, "2" + y)],
                 ["...", "...", "", "..."],
                 [this.$mathFormula.rightBottom(name, x + "1"), this.$mathFormula.rightBottom(name, x + "2"), '...', this.$mathFormula.rightBottom(name, x + y)]
-            ]);
+            ],flag);
         };
 
         // 矩阵Axy的转置

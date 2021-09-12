@@ -6,15 +6,15 @@
         </h1>
         <p>
             一般线性方程组是指形式为
-            <span class='center-line' kp-math-formula="mathFormulas.xxfcz"></span>
+            <span class='center-line' kp-math-formula="mathFormulas[0]"></span>
             的方程组，其中
-            <span kp-math-formula="mathFormulas.x1"></span>，
-            <span kp-math-formula="mathFormulas.x2"></span>，...，
-            <span kp-math-formula="mathFormulas.xn"></span>
+            <span kp-math-formula="mathFormulas[1]"></span>，
+            <span kp-math-formula="mathFormulas[2]"></span>，...，
+            <span kp-math-formula="mathFormulas[3]"></span>
             代表n个未知量，s是方程的个数，
-            <span kp-math-formula="mathFormulas.aij"></span>
+            <span kp-math-formula="mathFormulas[4]"></span>
             (i=1，2，...，s 且j=1，2，...，s)称为方程组的系数，
-            <span kp-math-formula="mathFormulas.bj"></span>
+            <span kp-math-formula="mathFormulas[5]"></span>
             (j=1，2，...，s)称为常数项。
         </p>
     </div>
@@ -27,8 +27,8 @@
             };
         },
         mounted() {
-            this.mathFormulas = {
-                xxfcz: this.$mathFormula.equationSet(
+            this.mathFormulas = [
+                this.$mathFormula.equationSet(
                     this.$mathFormula.join(
                         this.$mathFormula.rightBottom('a', '11'),
                         this.$mathFormula.rightBottom('x', '1'),
@@ -67,12 +67,12 @@
                         this.$mathFormula.rightBottom('b', 's')
                     )
                 ),
-                x1: this.$mathFormula.rightBottom('x', 1),
-                x2: this.$mathFormula.rightBottom('x', 2),
-                xn: this.$mathFormula.rightBottom('x', 'n'),
-                aij: this.$mathFormula.rightBottom('a', 'ij'),
-                bj: this.$mathFormula.rightBottom('b', 'j')
-            };
+                this.$mathFormula.rightBottom('x', 1),
+                this.$mathFormula.rightBottom('x', 2),
+                this.$mathFormula.rightBottom('x', 'n'),
+                this.$mathFormula.rightBottom('a', 'ij'),
+                this.$mathFormula.rightBottom('b', 'j')
+            ];
         },
     };
 </script>

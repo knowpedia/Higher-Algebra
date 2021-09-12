@@ -10,12 +10,12 @@
         <p>
             设
             <span class="center-line">
-                <span kp-math-formula="mathFormulas.A_define"></span>
+                <span kp-math-formula="mathFormulas[0]"></span>
                 和
-                <span kp-math-formula="mathFormulas.B_define"></span>
+                <span kp-math-formula="mathFormulas[1]"></span>
             </span>
             是两个s x n矩阵，则矩阵
-            <span class="center-line" kp-math-formula="mathFormulas.C_add_define"></span>
+            <span class="center-line" kp-math-formula="mathFormulas[2]"></span>
             称为
             <span class="important">A和B的和</span>
             ，记为
@@ -35,14 +35,14 @@
         <p>
             设
             <span class="center-line">
-                <span kp-math-formula="mathFormulas.A_define_small"></span>
+                <span kp-math-formula="mathFormulas[3]"></span>
                 ，
-                <span kp-math-formula="mathFormulas.B_define_small"></span>
+                <span kp-math-formula="mathFormulas[4]"></span>
             </span>
             那么矩阵
-            <span class="center-line" kp-math-formula="mathFormulas.C_define_small"></span>
+            <span class="center-line" kp-math-formula="mathFormulas[5]"></span>
             ，其中
-            <span class="center-line" kp-math-formula="mathFormulas.cij_all"></span>
+            <span class="center-line" kp-math-formula="mathFormulas[6]"></span>
             称为
             <span class="important">
                 A与B的乘积
@@ -60,17 +60,17 @@
         </h2>
         <p>
             主对角线上的元素全是1，其余元素全是0的n*n矩阵
-            <span class='center-line' kp-math-formula="mathFormulas.E"></span>
+            <span class='center-line' kp-math-formula="mathFormulas[7]"></span>
             称为n级<span class="important">单位矩阵</span>，记为
-            <span kp-math-formula="mathFormulas.En"></span>，或者在不致引起含混的时候简单写为<span class='important'>E</span>。
+            <span kp-math-formula="mathFormulas[8]"></span>，或者在不致引起含混的时候简单写为<span class='important'>E</span>。
         </p>
         <h2>
             定义
         </h2>
         <p>
             矩阵
-            <span class="center-line" kp-math-formula='mathFormulas.ka'></span>
-            称为矩阵A=<span kp-math-formula='mathFormulas.A_define_small'></span>与数k的
+            <span class="center-line" kp-math-formula='mathFormulas[9]'></span>
+            称为矩阵A=<span kp-math-formula='mathFormulas[3]'></span>与数k的
             <span class="important">
                 数量乘积
             </span>
@@ -85,11 +85,11 @@
         </h2>
         <p>
             设
-            <span class="center-line" kp-math-formula='mathFormulas.a'></span>
+            <span class="center-line" kp-math-formula='mathFormulas[10]'></span>
             所谓
             <span class="important">A的转置</span>
             就是指矩阵
-            <span class="center-line" kp-math-formula='mathFormulas.aT'></span>
+            <span class="center-line" kp-math-formula='mathFormulas[11]'></span>
             显然，s*n矩阵的转置是n*s矩阵。
         </p>
         <h1 id='fixed-jzcjdhlsyc'>
@@ -135,25 +135,25 @@
             <span class="important">可逆的</span>，如果有n级方阵B，使得
             <span class="center-line">AB = BA = E</span>
             这里的E是n级单位矩阵。那么，我们就称矩阵B为A的<span class="important">逆矩阵</span>，记为
-            <span kp-math-formula='mathFormulas.aL'></span>。
+            <span kp-math-formula='mathFormulas[12]'></span>。
         </p>
         <h2>
             定义
         </h2>
         <p>
-            设 <span kp-math-formula='mathFormulas.Aij'></span>
+            设 <span kp-math-formula='mathFormulas[13]'></span>
             是矩阵
-            <span class="center-line" kp-math-formula='mathFormulas.Ann'></span>
+            <span class="center-line" kp-math-formula='mathFormulas[15]'></span>
             中元素
-            <span kp-math-formula='mathFormulas.aij'></span>
+            <span kp-math-formula='mathFormulas[14]'></span>
             的代数余子式，矩阵
-            <span class="center-line" kp-math-formula='mathFormulas.A_'></span>
+            <span class="center-line" kp-math-formula='mathFormulas[16]'></span>
             称为A的
             <span class="important">伴随矩阵</span>。
         </p>
         <p>
             由行列式按一行（列）展开的公式立即得出：
-            <span class="center-line" kp-math-formula='mathFormulas.qlgs1'></span>
+            <span class="center-line" kp-math-formula='mathFormulas[17]'></span>
             其中d=|A|。
         </p>
         <h2>
@@ -161,7 +161,7 @@
         </h2>
         <p>
             矩阵A是可逆的充分必要条件是A非退化，而
-            <span class="center-line" kp-math-formula='mathFormulas.qlgs2'></span>
+            <span class="center-line" kp-math-formula='mathFormulas[18]'></span>
         </p>
         <h2>
             定理
@@ -182,27 +182,27 @@
             };
         },
         mounted() {
-            this.mathFormulas = {
-                A_define: this.$mathFormula.join("A=", this.getlittleMatrix('a', 'ij', 'sn'), "=", this.getMatrix('a', 's', "n")),
-                B_define: this.$mathFormula.join("B=", this.getlittleMatrix('b', 'ij', 'sn'), "=", this.getMatrix('b', 's', "n")),
-                C_add_define: this.$mathFormula.join("C=", this.getlittleMatrix('c', 'ij', 'sn'), "=", this.getAddlittleMatrix('a', 'b', 'ij', 'sn'), '=', this.getAddMatrix('a', 'b', 's', 'n')),
-                A_define_small: this.getlittleMatrix('a', 'ik', 'sn'),
-                B_define_small: this.getlittleMatrix('b', 'kj', 'nm'),
-                C_define_small: this.getlittleMatrix('c', 'ij', 'sm'),
-                cij_all: this.$mathFormula.join(this.$mathFormula.rightBottom('c', 'ij'), "=", this.$mathFormula.rightBottom('a', 'i1'), this.$mathFormula.rightBottom('b', '1j'), "+", this.$mathFormula.rightBottom('a', 'i2'), this.$mathFormula.rightBottom('b', '2j'), "+ ... +", this.$mathFormula.rightBottom('a', 'in'), this.$mathFormula.rightBottom('b', 'nj'), "=", this.$mathFormula.sum("k=1", "n", this.$mathFormula.join(this.$mathFormula.rightBottom('a', 'ik'), this.$mathFormula.rightBottom('b', 'kj')))),
-                E: this.$mathFormula.matrix([[1, 0, '...', 0], [0, 1, '...', 0], ['...', '...', '', '...'], [0, 0, '...', 1]]),
-                En: this.$mathFormula.rightBottom('E', 'n'),
-                ka: this.getMatrix('ka', 's', 'n'),
-                a: this.$mathFormula.join('A', '=', this.getMatrix('a', 's', 'n')),
-                aT: this.$mathFormula.join(this.$mathFormula.rightTop('A', 'T'), '=', this.getMatrixT('a', 's', 'n')),
-                aL: this.$mathFormula.rightTop('A', '-1'),
-                Aij: this.$mathFormula.rightBottom('A', 'ij'),
-                aij: this.$mathFormula.rightBottom('a', 'ij'),
-                Ann: this.$mathFormula.join('A', '=', this.getMatrix('a', 'n', 'n')),
-                A_: this.$mathFormula.join(this.$mathFormula.rightTop('A', '*'), '=', this.getMatrix('A', 'n', 'n')),
-                qlgs1: this.$mathFormula.join('A', this.$mathFormula.rightTop('A', '*'), '=', this.$mathFormula.rightTop('A', '*'), 'A', '=', this.$mathFormula.matrix([['d', 0, '...', 0], [0, 'd', '...', 0], ['...', '...', '', '...'], [0, 0, '...', 'd']]), '=dE'),
-                qlgs2: this.$mathFormula.join(this.$mathFormula.rightTop('A', '-1'), '=', this.$mathFormula.division('1', 'd'), this.$mathFormula.rightTop('A', '*'), '   (d=|A|≠0)')
-            };
+            this.mathFormulas = [
+                this.$mathFormula.join("A=", this.getlittleMatrix('a', 'ij', 'sn'), "=", this.getMatrix('a', 's', "n")),
+                this.$mathFormula.join("B=", this.getlittleMatrix('b', 'ij', 'sn'), "=", this.getMatrix('b', 's', "n")),
+                this.$mathFormula.join("C=", this.getlittleMatrix('c', 'ij', 'sn'), "=", this.getAddlittleMatrix('a', 'b', 'ij', 'sn'), '=', this.getAddMatrix('a', 'b', 's', 'n')),
+                this.getlittleMatrix('a', 'ik', 'sn'),
+                this.getlittleMatrix('b', 'kj', 'nm'),
+                this.getlittleMatrix('c', 'ij', 'sm'),
+                this.$mathFormula.join(this.$mathFormula.rightBottom('c', 'ij'), "=", this.$mathFormula.rightBottom('a', 'i1'), this.$mathFormula.rightBottom('b', '1j'), "+", this.$mathFormula.rightBottom('a', 'i2'), this.$mathFormula.rightBottom('b', '2j'), "+ ... +", this.$mathFormula.rightBottom('a', 'in'), this.$mathFormula.rightBottom('b', 'nj'), "=", this.$mathFormula.sum("k=1", "n", this.$mathFormula.join(this.$mathFormula.rightBottom('a', 'ik'), this.$mathFormula.rightBottom('b', 'kj')))),
+                this.$mathFormula.matrix([[1, 0, '...', 0], [0, 1, '...', 0], ['...', '...', '', '...'], [0, 0, '...', 1]]),
+                this.$mathFormula.rightBottom('E', 'n'),
+                this.getMatrix('ka', 's', 'n'),
+                this.$mathFormula.join('A', '=', this.getMatrix('a', 's', 'n')),
+                this.$mathFormula.join(this.$mathFormula.rightTop('A', 'T'), '=', this.getMatrixT('a', 's', 'n')),
+                this.$mathFormula.rightTop('A', '-1'),
+                this.$mathFormula.rightBottom('A', 'ij'),
+                this.$mathFormula.rightBottom('a', 'ij'),
+                this.$mathFormula.join('A', '=', this.getMatrix('a', 'n', 'n')),
+                this.$mathFormula.join(this.$mathFormula.rightTop('A', '*'), '=', this.getMatrix('A', 'n', 'n')),
+                this.$mathFormula.join('A', this.$mathFormula.rightTop('A', '*'), '=', this.$mathFormula.rightTop('A', '*'), 'A', '=', this.$mathFormula.matrix([['d', 0, '...', 0], [0, 'd', '...', 0], ['...', '...', '', '...'], [0, 0, '...', 'd']]), '=dE'),
+                this.$mathFormula.join(this.$mathFormula.rightTop('A', '-1'), '=', this.$mathFormula.division('1', 'd'), this.$mathFormula.rightTop('A', '*'), '   (d=|A|≠0)')
+            ];
         }
     };
 </script>
