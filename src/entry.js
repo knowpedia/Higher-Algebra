@@ -9,6 +9,7 @@ import './style/style.css';
 import "./style/doc.css";
 import "./style/menu.css";
 
+import mathFormula from './Service/mathFormula'; Knowpedia.use(mathFormula);
 
 import App from './App.paper';
 

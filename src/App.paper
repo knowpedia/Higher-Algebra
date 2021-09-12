@@ -63,6 +63,16 @@
                                 矩阵的运算
                             </h4>
                         </li>
+                        <li>
+                            <h4 @click='doScroll("jzcjdhlsyc")'>
+                                矩阵乘积的行列式与秩
+                            </h4>
+                        </li>
+                        <li>
+                            <h4 @click='doScroll("jzdn")'>
+                                矩阵的逆
+                            </h4>
+                        </li>
                     </ul>
                 </li>
             </ul>
