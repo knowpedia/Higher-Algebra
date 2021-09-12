@@ -66,6 +66,16 @@
                                 消元法
                             </h4>
                         </li>
+                        <li>
+                            <h4 @click='doScroll("nwxlkj")'>
+                                n维向量空间
+                            </h4>
+                        </li>
+                        <li>
+                            <h4 @click='doScroll("xxxgx")'>
+                                线性相关性
+                            </h4>
+                        </li>
                     </ul>
                 </li>
             </ul>
