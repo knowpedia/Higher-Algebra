@@ -37,28 +37,6 @@
     color: red;
 }
 
-.doc-view>h3 {
-    font-size: .16rem;
-    line-height: 2em;
-    margin-top: .2rem;
-}
-
-.doc-view>h4 {
-    font-size: .15rem;
-    line-height: 2em;
-    margin-top: .2rem;
-    padding-left: 1em;
-    color: #060606;
-}
-
-.doc-view>span.no-menu-title {
-    padding: .1rem;
-    display: block;
-    color: rgb(12, 12, 12);
-    font-weight: 800;
-}
-
-
 .doc-view>p {
     line-height: 1.6em;
     text-indent: 2em;
@@ -74,43 +52,10 @@
     padding: 0 2px;
 }
 
-.doc-view .public {
-    color: #dac305;
-    font-weight: 800;
-    padding: 0 2px;
-}
-
 .doc-view .url {
     text-decoration: underline;
     color: rgb(2, 141, 2);
 }
-
-.doc-view .warn {
-    color: #030303;
-    font-weight: 800;
-    padding: 0 2px;
-    font-size: 12px;
-}
-
-.doc-view a {
-    color: #2396b9;
-    font-weight: 800;
-    text-decoration: underline;
-    padding: 0 2px;
-}
-
-.doc-view>div {
-    position: relative;
-}
-
-.doc-view>div>pre {
-    font-family: cursive;
-    font-weight: 400;
-    font-size: 0.14rem;
-    padding: .15rem .2rem;
-    line-height: 1.6em;
-}
-
 
 .doc-view>ul {
     margin-left: .5rem;
@@ -120,20 +65,4 @@
     line-height: 2em;
     font-size: .13rem;
     color: #000000;
-}
-
-.beta {
-    position: relative;
-}
-
-.beta::after {
-    content: "beta";
-    background: red;
-    color: white;
-    font-size: 12px;
-    padding: 0 5px;
-    position: absolute;
-    display: inline-block;
-    height: 1.5em;
-    line-height: 1.5em;
 }

@@ -1,6 +1,6 @@
 <template>
     <div class='doc-view' id='root-view'>
-        <header id="fixed-top" @click='doScroll("top")'>行列式</header>
+        <header id="fixed-top">行列式</header>
         <h1 id='fixed-pl'>
             排列
         </h1>

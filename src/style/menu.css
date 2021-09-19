@@ -18,9 +18,7 @@ div.menu-view>div:first-child {
 }
 
 div.menu-view>div:first-child h3,
-div.menu-view>div:first-child h4,
-div.menu-view>div:first-child h5,
-div.menu-view>div:first-child h6 {
+div.menu-view>div:first-child h4 {
     font-weight: 400;
     font-size: .14rem;
     color: #304455;
@@ -32,9 +30,7 @@ div.menu-view>div:first-child h6 {
 }
 
 div.menu-view>div:first-child h3:hover,
-div.menu-view>div:first-child h4:hover,
-div.menu-view>div:first-child h5:hover,
-div.menu-view>div:first-child h6:hover {
+div.menu-view>div:first-child h4:hover {
     border-bottom: 2px solid #2396b9;
 }
 

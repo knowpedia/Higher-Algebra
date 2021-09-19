@@ -1,6 +1,6 @@
 <template>
     <div class='doc-view' id='root-view'>
-        <header id="fixed-top" @click='doScroll("top")'>线性方程组</header>
+        <header id="fixed-top">线性方程组</header>
         <h1 id='fixed-xyf'>
             消元法
         </h1>
