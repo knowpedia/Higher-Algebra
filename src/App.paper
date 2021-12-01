@@ -101,6 +101,23 @@
                     </ul>
                 </li>
             </ul>
+            <ul :active='pagename=="quadratic-form"?"yes":"no"'>
+                <li>
+                    <h3 @click='openPage("quadratic-form","top")'>二次型</h3>
+                    <ul>
+                        <li>
+                            <h4 @click='doScroll("ecxjqjzbs")'>
+                                二次型及其矩阵表示
+                            </h4>
+                        </li>
+                        <li>
+                            <h4 @click='doScroll("bzx")'>
+                                标准型
+                            </h4>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
             <a href="https://github.com/knowpedia/Higher-Algebra" target="_blank">Fork Me On Github</a>
         </div>
     </div>
@@ -117,7 +134,8 @@
         quantic: () => import('./quantic.paper'),
         determinant: () => import('./determinant.paper'),
         "linear-system-of-equations": () => import('./linear-system-of-equations.paper'),
-        matrix: () => import('./matrix.paper')
+        matrix: () => import('./matrix.paper'),
+        "quadratic-form": () => import('./quadratic-form.paper')
     };
 
     export default {

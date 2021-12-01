@@ -1,0 +1,145 @@
+<template>
+    <div class='doc-view' id='root-view'>
+        <header id="fixed-top">二次型</header>
+        <h1 id='fixed-ecxjqjzbs'>
+            二次型及其矩阵表示
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            设P是一数域，一个系数在数域P中的x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>的二次齐次多项式
+            <span class="center-line">
+                f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)=a<sub>11</sub>x<sub>1</sub><sup>2</sup>+2a<sub>12</sub>x<sub>1</sub>x<sub>2</sub>+...+2a<sub>1n</sub>x<sub>1</sub>x<sub>n</sub>+a<sub>22</sub>x<sub>2</sub><sup>2</sup>+...+2a<sub>2n</sub>x<sub>2</sub>x<sub>n</sub>+......+a<sub>nn</sub>x<sub>n</sub><sup>2</sup>
+            </span>
+            称为
+            <span class="important">
+                数域P上的一个n元二次型
+            </span>
+            ，或者，在不致引起混淆时简称
+            <span class="important">
+                二次型
+            </span>。
+        </p>
+        <h2>
+            定义
+        </h2>
+        <p>
+            设x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>；y<sub>1</sub>,y<sub>2</sub>,...,y<sub>n</sub>是两组文字，系数在数域P中的一组关系式
+            <span class="center-line" kp-math-formula="mathFormulas[0]"></span>
+            称为由x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>到y<sub>1</sub>,y<sub>2</sub>,...,y<sub>n</sub>的一个
+            <span class="important">线性替换</span>。如果系数行列式
+            <span class="center-line">
+                |c<sub>ij</sub>|≠0，
+            </span>
+            那么线性替换就称为
+            <span class="important">非退化的</span>。
+        </p>
+        <p>
+            对于原来的系数X，使用Y替换，它们的关系如下：
+            <span class="center-line">
+                X=CY
+            </span>
+            ，其中C是一个非退化的矩阵。我们可以很容易的推导出：
+            <span class="center-line">
+                f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)=
+                X<sup>T</sup>AX=
+                (CY)<sup>T</sup>A(CY)=
+                Y<sup>T</sup>C<sup>T</sup>ACY=
+                Y<sup>T</sup>(C<sup>T</sup>AC)Y=
+                Y<sup>T</sup>BY
+            </span>
+            ，由此，我们得到变换前后的二次型的矩阵关系：
+            <span class="center-line">
+                B=C<sup>T</sup>AC。
+            </span>
+        </p>
+        <h2>
+            定义
+        </h2>
+        <p>
+            设数域P上n*n矩阵
+            <span class="important">A，B称为合同的</span>
+            ，如果有数域P上可逆的n*n矩阵C，使
+            <span class="center-line">
+                B=C<sup>T</sup>AC
+            </span>。合同是矩阵之间的一个关系。
+        </p>
+        <h1 id='fixed-bzx'>
+            标准型
+        </h1>
+        <p>
+            二次型中，最简单的一种是只包含平方项的二次型
+            <span class="center-line">
+                d<sub>1</sub>x<sub>1</sub><sup>2</sup>+ d<sub>2</sub>x<sub>2</sub><sup>2</sup>+...+
+                d<sub>n</sub>x<sub>n</sub><sup>2</sup>
+            </span>
+        </p>
+        <h2>
+            定理
+        </h2>
+        <p>
+            数域P上的任意一个二次型都可以经过非退化的线性替换变成平方和（也就是上面那种最简单的二次型）的形式。
+        </p>
+        <h2>
+            定义
+        </h2>
+        <p>
+            二次型f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)经过非退化的线性替换所变成的平方和称为
+            f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)的一个
+            <span class="important">标准型</span>。
+        </p>
+    </div>
+</template>
+<script>
+    export default {
+        data() {
+            return {
+                mathFormulas: {}
+            };
+        },
+        mounted() {
+            this.mathFormulas = [
+                this.$mathFormula.equationSet(
+                    this.$mathFormula.join(
+                        this.$mathFormula.rightBottom('x', '1'),
+                        "=",
+                        this.$mathFormula.rightBottom('c', '11'),
+                        this.$mathFormula.rightBottom('y', '1'),
+                        "+",
+                        this.$mathFormula.rightBottom('c', '12'),
+                        this.$mathFormula.rightBottom('y', '2'),
+                        "+...+",
+                        this.$mathFormula.rightBottom('c', '1n'),
+                        this.$mathFormula.rightBottom('y', 'n')
+                    ),
+                    this.$mathFormula.join(
+                        this.$mathFormula.rightBottom('x', '2'),
+                        "=",
+                        this.$mathFormula.rightBottom('c', '21'),
+                        this.$mathFormula.rightBottom('y', '1'),
+                        "+",
+                        this.$mathFormula.rightBottom('c', '22'),
+                        this.$mathFormula.rightBottom('y', '2'),
+                        "+...+",
+                        this.$mathFormula.rightBottom('c', '2n'),
+                        this.$mathFormula.rightBottom('y', 'n')
+                    ),
+                    "......",
+                    this.$mathFormula.join(
+                        this.$mathFormula.rightBottom('x', 'n'),
+                        "=",
+                        this.$mathFormula.rightBottom('c', 'n1'),
+                        this.$mathFormula.rightBottom('y', '1'),
+                        "+",
+                        this.$mathFormula.rightBottom('c', 'n2'),
+                        this.$mathFormula.rightBottom('y', '2'),
+                        "+...+",
+                        this.$mathFormula.rightBottom('c', 'nn'),
+                        this.$mathFormula.rightBottom('y', 'n')
+                    )
+                )
+            ];
+        },
+    };
+</script>
