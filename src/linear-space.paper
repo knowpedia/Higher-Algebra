@@ -1,0 +1,94 @@
+<template>
+    <div class='doc-view' id='root-view'>
+        <header id="fixed-top">线性空间</header>
+        <h1 id='fixed-jhys'>
+            集合 · 映射
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            所谓
+            <span class="important">集合</span>
+            就是指作为整体看到一堆东西，而组成集合的东西称为这个集合的
+            <span class="important">元素</span>，我们用
+            <span class="center-line">
+                a∈M
+            </span>
+            表示a是集合M的元素，读为：a属于M。用
+            <span class="center-line">
+                a∉M
+            </span>
+            表示a不是集合M的元素，读为：a不属于M。
+        </p>
+        <h1 id='fixed-xxkjddyyjdxz'>
+            线性空间的定义与简单性质
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            设V是一个非空集合，P是一个数域。在集合V的元素之间定义了一种代数运算，叫做
+            <span class="important">加法</span>；这就是说，给出了一个法则，对于V中任意两个元素α与β，在V中都有唯一的一个元素γ与它们对应，称为α与β的和，
+            记为γ=α+β。在数域P与集合V的关系之间还定义了一种运算，叫做<span class="important">数量乘法</span>；这就是说，
+            对于数域P中的任一数k与V中任一元素α，在V中都有唯一的一个元素δ与它们对应，称为k与α的
+            <span class="important">数量乘积</span>，记为δ=kα。如果加法与数量乘法满足下列规则，那么V称为数域P上的
+            <span class="important">线性空间</span>。
+        </p>
+        <p>
+            加法满足下面四条规则：
+        </p>
+        <ul>
+            <li>
+                （1）α+β=β+α；
+            </li>
+            <li>
+                （2）(α+β)+γ=α+(β+γ)；
+            </li>
+            <li>
+                （3）在V中有一个元素0，对于V中任一元素α都有
+                <span class="center-line">
+                    0+α=α
+                </span>
+                （具有这个性质的元素0称为V的<span class="important">零元素</span>）；
+            </li>
+            <li>
+                （4）对于V中每一个元素α，都有V中的元素β，使得
+                <span class="center-line">
+                    α+β=0
+                </span>
+                （β称为α的<span class="important">负元素</span>）。
+            </li>
+        </ul>
+        <p>
+            数量乘法满足下面两条规则：
+        </p>
+        <ul>
+            <li>
+                （5）1α=α；
+            </li>
+            <li>
+                （6）k(lα)=（kl)α。
+            </li>
+        </ul>
+        <p>
+            数量乘法与加法满足下面两条规则：
+        </p>
+        <ul>
+            <li>
+                （7）(k+l)α=kα+lα；
+            </li>
+            <li>
+                （8）k(α+β)=kα+kβ。
+            </li>
+        </ul>
+        <p>
+            在以上规则中，k，l等表示数域P中的任意数；α，β，γ等表示集合V中任意元素。
+        </p>
+        <p>
+            线性空间的元素也称为
+            <span class="important">向量</span>，当然，这里所谓向量比几何中所谓向量的涵义要广泛得多。线性空间有时也称为
+            <span class="important">向量空间</span>。
+        </p>
+    </div>
+</template>

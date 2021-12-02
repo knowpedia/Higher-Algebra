@@ -118,6 +118,23 @@
                     </ul>
                 </li>
             </ul>
+            <ul :active='pagename=="linear-space"?"yes":"no"'>
+                <li>
+                    <h3 @click='openPage("linear-space","top")'>线性空间</h3>
+                    <ul>
+                        <li>
+                            <h4 @click='doScroll("jhys")'>
+                                集合 · 映射
+                            </h4>
+                        </li>
+                        <li>
+                            <h4 @click='doScroll("xxkjddyyjdxz")'>
+                                线性空间的定义与简单性质
+                            </h4>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
             <a href="https://github.com/knowpedia/Higher-Algebra" target="_blank">Fork Me On Github</a>
         </div>
     </div>
@@ -135,7 +152,8 @@
         determinant: () => import('./determinant.paper'),
         "linear-system-of-equations": () => import('./linear-system-of-equations.paper'),
         matrix: () => import('./matrix.paper'),
-        "quadratic-form": () => import('./quadratic-form.paper')
+        "quadratic-form": () => import('./quadratic-form.paper'),
+        "linear-space": () => import('./linear-space.paper'),
     };
 
     export default {
