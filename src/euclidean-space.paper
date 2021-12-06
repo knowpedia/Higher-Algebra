@@ -1,0 +1,31 @@
+<template>
+    <div class='doc-view' id='root-view'>
+        <header id="fixed-top">欧几里得空间</header>
+        <h1 id='fixed-dyyjbxz'>
+            定义与基本性质
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            设V是实数域R上一线性空间，在V上定义了一个二元实函数，称为<span class="important">内积</span>，记作(α,β)，它具有以下性质：
+        </p>
+        <ul>
+            <li>
+                （1）(α,β)=(β,α)
+            </li>
+            <li>
+                （2）(kα,β)=k(α,β)
+            </li>
+            <li>
+                （3）(α+β,γ)=(α,γ)+(β,γ)
+            </li>
+            <li>
+                （4）(α,α)≥0，当且仅当α=0时(α,α)=0
+            </li>
+        </ul>
+        <p>
+            这里α，β，γ是V中任意的向量，k是任意实数，这样的线性空间V称为<span class="important">欧几里得空间</span> 。
+        </p>
+    </div>
+</template>

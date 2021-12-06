@@ -135,6 +135,30 @@
                     </ul>
                 </li>
             </ul>
+            <ul :active='pagename=="linear-transformation"?"yes":"no"'>
+                <li>
+                    <h3 @click='openPage("linear-transformation","top")'>线性变换</h3>
+                    <ul>
+                        <li>
+                            <h4 @click='doScroll("xxbhddy")'>
+                                线性变换的定义
+                            </h4>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul :active='pagename=="euclidean-space"?"yes":"no"'>
+                <li>
+                    <h3 @click='openPage("euclidean-space","top")'>欧几里得空间</h3>
+                    <ul>
+                        <li>
+                            <h4 @click='doScroll("dyyjbxz")'>
+                                定义与基本性质
+                            </h4>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
             <a href="https://github.com/knowpedia/Higher-Algebra" target="_blank">Fork Me On Github</a>
         </div>
     </div>
@@ -154,6 +178,8 @@
         matrix: () => import('./matrix.paper'),
         "quadratic-form": () => import('./quadratic-form.paper'),
         "linear-space": () => import('./linear-space.paper'),
+        "linear-transformation": () => import('./linear-transformation.paper'),
+        "euclidean-space": () => import('./euclidean-space.paper')
     };
 
     export default {

@@ -1,0 +1,24 @@
+<template>
+    <div class='doc-view' id='root-view'>
+        <header id="fixed-top">线性变换</header>
+        <h1 id='fixed-xxbhddy'>
+            线性变换的定义
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            线性空间V的一个变换𝓐称为
+            <span class="important">线性变换</span>，如果对于V中任意的元素α，β和数域P中任意数k，都有
+            <span class="center-line">
+                𝓐(α+β)=𝓐(α)+𝓐(β)，
+            </span>
+            <span class="center-line">
+                𝓐(kα)=k𝓐(α)。
+            </span>
+        </p>
+        <p>
+            有时也说成线性变换保持向量的加法与数量乘法。
+        </p>
+    </div>
+</template>
