@@ -89,6 +89,64 @@
             f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)的一个
             <span class="important">标准型</span>。
         </p>
+        <h1 id='fixed-wyx'>
+            唯一性
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            一个二次型经过适当的非退化线性替换后，f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)变成标准形。虽然标准形不是唯一的，单都可以表示为如下形式：
+        </p>
+        <p class="center-line">
+            d<sub>1</sub>y<sub>1</sub><sup>2</sup>+d<sub>2</sub>y<sub>2</sub><sup>2</sup>+...+d<sub>r</sub>y<sub>r</sub><sup>2</sup>
+            （d<sub>i</sub>≠0,其中i=1,2,...,r）
+        </p>
+        <p>
+            易知r就是f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)的矩阵的秩。因为复数总可以开平方，我们再作一非退化线性替换
+            <span class="center-line" kp-math-formula="mathFormulas[1]"></span>
+            就变成
+        </p>
+        <p class="center-line">
+            z<sub>1</sub><sup>2</sup>+ z<sub>2</sub><sup>2</sup>+...+ z<sub>r</sub><sup>2</sup>
+        </p>
+        <p>
+            称为复二次型f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)的<span class="important">规范形</span>。
+        </p>
+        <h2>
+            定理
+        </h2>
+        <p>
+            任意一个复系数的二次型，经过一适当的非退化线性替换可以变成规范形，且规范形是唯一的。
+        </p>
+        <h2>
+            定义
+        </h2>
+        <p>
+            设f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)是一实数的二次型，经过某一个非退化线性替换，再适当排列文字的次序，可使f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)变成标准形
+        </p>
+        <p class="center-line">
+            d<sub>1</sub>y<sub>1</sub><sup>2</sup>+...+d<sub>p</sub>y<sub>p</sub><sup>2</sup>-d<sub>p+1</sub>y<sub>p+1</sub><sup>2</sup>-...-d<sub>r</sub>y<sub>r</sub><sup>2</sup>
+            （d<sub>i</sub>>0,其中i=1,2,...,r）
+        </p>
+        <p>
+            r是f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)的矩阵的秩。因为在实数域中，正实数总是可以开平方，所以再作一非退化线性替换
+            <span class="center-line" kp-math-formula="mathFormulas[1]"></span>
+            就变成
+        </p>
+        <p class="center-line">
+            z<sub>1</sub><sup>2</sup>+ ...+z<sub>p</sub><sup>2</sup>-z<sub>p+1</sub><sup>2</sup>-...-
+            z<sub>r</sub><sup>2</sup>
+        </p>
+        <p>
+            称为实二次型f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)的<span class="important">规范形</span>。
+        </p>
+        <h2>
+            定理
+        </h2>
+        <p>
+            任意一个实数域上的二次型，经过一适当的非退化线性替换可以变成规范形，且规范形是唯一的。
+        </p>
     </div>
 </template>
 <script>
@@ -137,6 +195,37 @@
                         "+...+",
                         this.$mathFormula.rightBottom('c', 'nn'),
                         this.$mathFormula.rightBottom('y', 'n')
+                    )
+                ),
+                this.$mathFormula.equationSet(
+                    this.$mathFormula.join(
+                        this.$mathFormula.rightBottom('y', '1'),
+                        '=',
+                        this.$mathFormula.division(1, this.$mathFormula.gen(
+                            this.$mathFormula.rightBottom('d', '1')
+                        )),
+                        this.$mathFormula.rightBottom('z', '1')
+                    ),
+                    '............',
+                    this.$mathFormula.join(
+                        this.$mathFormula.rightBottom('y', 'r'),
+                        '=',
+                        this.$mathFormula.division(1, this.$mathFormula.gen(
+                            this.$mathFormula.rightBottom('d', 'r')
+                        )),
+                        this.$mathFormula.rightBottom('z', 'r')
+                    ),
+                    '............',
+                    this.$mathFormula.join(
+                        this.$mathFormula.rightBottom('y', 'r+1'),
+                        '=',
+                        this.$mathFormula.rightBottom('z', 'r+1')
+                    ),
+                    '............',
+                    this.$mathFormula.join(
+                        this.$mathFormula.rightBottom('y', 'n'),
+                        '=',
+                        this.$mathFormula.rightBottom('z', 'n')
                     )
                 )
             ];

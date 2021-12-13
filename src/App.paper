@@ -115,6 +115,11 @@
                                 标准型
                             </h4>
                         </li>
+                        <li>
+                            <h4 @click='doScroll("wyx")'>
+                                唯一性
+                            </h4>
+                        </li>
                     </ul>
                 </li>
             </ul>
