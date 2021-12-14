@@ -120,6 +120,11 @@
                                 唯一性
                             </h4>
                         </li>
+                        <li>
+                            <h4 @click='doScroll("zdecx")'>
+                                正定二次型
+                            </h4>
+                        </li>
                     </ul>
                 </li>
             </ul>

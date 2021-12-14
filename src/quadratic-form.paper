@@ -147,6 +147,16 @@
         <p>
             任意一个实数域上的二次型，经过一适当的非退化线性替换可以变成规范形，且规范形是唯一的。
         </p>
+        <h1 id='fixed-zdecx'>
+            正定二次型
+        </h1>
+        <h2>
+            定义
+        </h2>
+        <p>
+            实二次型f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>)称为<span class="important">正定的</span>，
+            如果对于任意一组不全为零的实数c<sub>1</sub>，c<sub>2</sub>，...，c<sub>n</sub>都有f(c<sub>1</sub>,c<sub>2</sub>,...,c<sub>n</sub>)&gt;0。
+        </p>
     </div>
 </template>
 <script>
