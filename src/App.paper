@@ -270,7 +270,7 @@
                         padding: .1rem 0;
 
                         &.knowpedia {
-                            background-image: url('./assets/logo.png');
+                            background-image: url('./logo.png');
                             height: 150px;
                             background-color: transparent;
                             background-size: auto 100%;
